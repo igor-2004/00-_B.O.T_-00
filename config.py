@@ -32,19 +32,19 @@ def _get(key, default=None):
     return os.environ.get(key) or _secrets.get(key) or default
 
 # Обязательные: BOT_TOKEN должен быть установлен либо в env, либо в файле секретов
-BOT_TOKEN = _get("BOT_TOKEN")
+BOT_TOKEN = _get("8073733884:AAHenpjcO50sjxINpqRCK5O7iUrJCEUBN-I")
 if not BOT_TOKEN:
     raise RuntimeError("BOT_TOKEN not set! Set it in environment variables or in /data/.bot_secrets file.")
 
 # CHANNEL_ID: канал/чат для публикации (например -1001234567890). По умолчанию 0 (не настроен).
 try:
-    CHANNEL_ID = int(_get("CHANNEL_ID", "0"))
+    CHANNEL_ID = int(_get("CHANNEL_ID", "-1001958513038"))
 except ValueError:
     CHANNEL_ID = 0
 
 # ID владельца/админа (Telegram user id)
 try:
-    OWNER_ID = int(_get("OWNER_ID", "0"))
+    OWNER_ID = int(_get("OWNER_ID", "1184497918"))
 except ValueError:
     OWNER_ID = 0
 
@@ -52,7 +52,7 @@ except ValueError:
 DB_PATH = _get("DB_PATH", "/data/bot_database.db")
 
 # WEBHOOK: публичный URL без пути
-WEBHOOK_URL = _get("WEBHOOK_URL", "")
+WEBHOOK_URL = _get("WEBHOOK_URL", "https://bots-00.onrender.com")
 
 # Путь приёма вебхуков
 WEBHOOK_PATH = _get("WEBHOOK_PATH", "/webhook")
